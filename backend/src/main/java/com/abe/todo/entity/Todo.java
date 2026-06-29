@@ -1,0 +1,43 @@
+package com.abe.todo.entity;
+
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+public class Todo {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+
+  private String task;
+
+  private boolean completed;
+
+  public Todo() {
+  }
+
+  public Todo(String task) {
+    this.task = task;
+    this.completed = false;
+  }
+
+  public Long getId() {
+    return id;
+  }
+
+  public String getTask() {
+    return task;
+  }
+
+  public boolean getIsCompleted() {
+    return completed;
+  }
+
+  public void setTask(String task) {
+    this.task = task;
+  }
+
+  public void setCompleted(boolean completed) {
+    this.completed = completed;
+  }
+}
